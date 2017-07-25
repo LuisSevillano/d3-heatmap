@@ -1,0 +1,60 @@
+#wrapper {
+  margin: 0 auto;
+  display: block;
+  max-width: 500px; }
+
+#chart {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  margin: 0 auto; }
+
+h1 {
+  font-weight: normal;
+  font-size: 25px;
+  color: #777; }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #c5c5c5;
+  stroke: #008192;
+  shape-rendering: crispEdges; }
+
+.axis text {
+  fill: #454545; }
+
+.axis text {
+  font-size: 1rem; }
+
+rect {
+  stroke: white;
+  stroke-width: 1px; }
+
+.legend {
+  margin-left: 0.3rem;
+  font-size: 1rem;
+  line-height: 1.3em; }
+
+.legend-color {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 3px;
+  border-radius: 50%; }
+
+.green {
+  background-color: #41AB5D; }
+
+.yellow {
+  background-color: #FEC44F; }
+
+.purple {
+  background-color: #9E9AC8; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #454545;
+  font-size: 62.5%; }
+
+/*# sourceMappingURL=main.css.map */

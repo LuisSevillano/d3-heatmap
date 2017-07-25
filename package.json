@@ -1,26 +1,27 @@
 {
-  "name": "rollup-test",
+  "name": "d3-calendar",
   "version": "1.0.0",
   "description": "fruits-vegetables-calendar",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "rollup -c",
-    "start": "browser-sync start --no-notify --server --files '*.html,*.js' & rollup -c -w"
+    "node-sass": "node-sass scss/main.scss --source-map true --output style",
+    "start": "browser-sync start --no-notify --server --files '*.html, js/*.js, style/*.css' & rollup -c -w & npm run node-sass -- --watch"
   },
   "author": "lsp",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.8",
+    "rollup-watch": "^3.2.2",
+    "node-sass": "^4.5.3",
+    "rollup": "^0.41.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
     "d3-axis": "^1.0.6",
     "d3-collection": "^1.0.3",
     "d3-queue": "^3.0.5",
     "d3-request": "^1.0.5",
     "d3-scale": "^1.0.5",
-    "d3-selection": "^1.0.5",
-    "rollup": "^0.41.6",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-uglify": "^1.0.1",
-    "rollup-watch": "^3.2.2"
+    "d3-selection": "^1.0.5"
   }
 }

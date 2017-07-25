@@ -3,40 +3,51 @@ import { scaleBand, scaleOrdinal } from "d3-scale"
 import { axisTop, axisLeft } from "d3-axis"
 import { json } from "d3-request"
 import { queue } from "d3-queue"
-import { entries } from "d3-collection"
+import { keys, entries } from "d3-collection"
 
 export default function(){
 
   var margin = { top: 50, right: 10, bottom: 10, left: 95 },
-  widthColumn,width,height,moreAxis = false, _data, svg, sq_calendar, fruit_group, fruitNames, monthNames, data;
+  widthColumn, width, height, moreAxis = false, monthNames;
   height = 500;
+
+  var data;
+
 
   //load data
   queue()
   .defer(json, "data/data.json")
   .await(ready);
 
-  function ready(error,json){
+  // function ready(error, json){
+  //   if (error) throw error
+  //
+  //   _data = json;
+  //   resize(_data);
+  // }
+
+  function ready(error, json) {
     if (error) throw error
 
-    _data = json;
-    resize(_data);
-  }
-
-  function resize() {
-
-    monthNames = Object.keys(_data.fruits["Aguacate"]);
-    heatmap("#fruits",_data.fruits)
-    heatmap("#vegetables",_data.vegetables)
+    if (!data) {
+      data = json;
+    }
+    keys(data).forEach(function(key){
+      heatmap(key, data[key]);
+    });
 
   }
-  function heatmap(el,data){
+  function heatmap(key,data){
 
-
+    var el = "#" + key;
     select(el).html("");
 
+    var monthNames = keys(entries(data)[0].value);
     var widthColumn = select("#chart").node().getBoundingClientRect().width,
     width = Math.min(600, widthColumn) - margin.left - margin.right,
+
+    // variable to show less labels on x axis
+    less_labels = width < 390,
 
     xScale = scaleBand().range([0, width]),
     yScale = scaleBand().rangeRound([0, height]),
@@ -45,6 +56,7 @@ export default function(){
     color = scaleOrdinal()
     .domain([0, 1, 2, 3])
     .range(["white", "#FED976", "#A1D99B", "#9E9AC8"]);
+
 
     widthColumn > 468 ? moreAxis = true : null;
 
@@ -66,16 +78,16 @@ export default function(){
     xAxis.scale(xScale);
     yAxis.scale(yScale);
 
-    svg = select(el)
+    var svg = select(el)
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
-    // table
+    // ~table
     var sq_calendar = svg.append("g").attr('class', 'sq_calendar');
 
-    // tr
-    fruit_group = sq_calendar.selectAll(".fruit_group")
+    // ~tr
+    var square_group = sq_calendar.selectAll(".square_group")
     .data(entries(data))
     .enter()
     .append("g")
@@ -83,8 +95,8 @@ export default function(){
     .attr("transform", function(d){
       return "translate(0," + yScale(d.key) + ")"
     })
-    // td
-    var square = fruit_group.selectAll(".square").data(function(d){
+    // ~td
+    var square = square_group.selectAll(".square").data(function(d){
       return entries(d.value);
     })
     .enter()
@@ -116,7 +128,7 @@ export default function(){
   }
 
   ///
-  select(window).on('resize', resize);
+  select(window).on('resize', ready);
 
   //resize();
 

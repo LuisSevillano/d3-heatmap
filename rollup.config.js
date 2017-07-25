@@ -3,7 +3,7 @@ import uglify from 'rollup-plugin-uglify';
 
 export default {
   entry: 'index.js',
-  dest: 'bundle.js',
+  dest: 'js/bundle.js',
   format: 'umd',
   moduleName: "d3",
   plugins: [
