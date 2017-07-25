@@ -1,0 +1,41 @@
+{
+  "fruits":{
+    "Aguacate": { "Mayo":1, "Junio":2, "Julio":2, "Agosto":2},
+    "Albaricoque": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Cereza": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":0},
+    "Ciruela": { "Mayo":1, "Junio":2, "Julio":2, "Agosto":2},
+    "Frambuesa": { "Mayo":1, "Junio":2, "Julio":2, "Agosto":2},
+    "Fresa": { "Mayo":2, "Junio":1, "Julio":0, "Agosto":0},
+    "Higo": { "Mayo":1, "Junio":2, "Julio":2, "Agosto":2},
+    "Limón": { "Mayo":2, "Junio":1, "Julio":0, "Agosto":0},
+    "Mango": { "Mayo":0, "Junio":0, "Julio":1, "Agosto":2},
+    "Manzana": { "Mayo":0, "Junio":0, "Julio":1, "Agosto":2},
+    "Melocotón": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Melón": { "Mayo":1, "Junio":2, "Julio":2, "Agosto":2},
+    "Membrillo": { "Mayo":0, "Junio":0, "Julio":1, "Agosto":2},
+    "Nectarina": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Níspero": { "Mayo":2, "Junio":0, "Julio":0, "Agosto":0},
+    "Paraguaya": { "Mayo":0, "Junio":1, "Julio":2, "Agosto":2},
+    "Pera": { "Mayo":0, "Junio":1, "Julio":2, "Agosto":2},
+    "Plátano": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Sandía": { "Mayo":1, "Junio":2, "Julio":2, "Agosto":2}
+  },
+  "vegetables":{
+    "Ajo": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Calabacín": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Calabaza": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "EsparrAgosto": { "Mayo":2, "Junio":1, "Julio":0, "Agosto":0},
+    "Espinaca": { "Mayo":2, "Junio":1, "Julio":1, "Agosto":1},
+    "Judia": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":1},
+    "Lechuga": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Nabo": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Pepino": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Pimiento": { "Mayo":2, "Junio":2, "Julio":0, "Agosto":0},
+    "Puerro": { "Mayo":2, "Junio":1, "Julio":0, "Agosto":0},
+    "Rábano": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Remolacha": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2},
+    "Repollo": { "Mayo":2, "Junio":1, "Julio":0, "Agosto":0},
+    "Tomate": { "Mayo":2, "Junio":2, "Julio":1, "Agosto":1},
+    "Zanahoria": { "Mayo":2, "Junio":2, "Julio":2, "Agosto":2}
+  }
+}

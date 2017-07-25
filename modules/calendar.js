@@ -44,7 +44,7 @@ export default function(){
     yNames = Object.keys(data),
     color = scaleOrdinal()
     .domain([0, 1, 2, 3])
-    .range(["white", "#ffd685", "#76bb88"]);
+    .range(["white", "#FED976", "#A1D99B", "#9E9AC8"]);
 
     widthColumn > 468 ? moreAxis = true : null;
 

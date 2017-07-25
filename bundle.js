@@ -2016,9 +2016,6 @@ var interpolateRound = function(a, b) {
   };
 };
 
-// p0 = [ux0, uy0, w0]
-// p1 = [ux1, uy1, w1]
-
 function cubehelix$1(hue$$1) {
   return (function cubehelixGamma(y) {
     y = +y;
@@ -2261,7 +2258,6 @@ var formatTypes = {
   "x": function(x) { return Math.round(x).toString(16); }
 };
 
-// [[fill]align][sign][symbol][0][width][,][.precision][type]
 var re = /^(?:(.)?([<>=^]))?([+\-\( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?([a-z%])?$/i;
 
 function formatSpecifier(specifier) {
@@ -4101,7 +4097,7 @@ var calendar = function(){
     yNames = Object.keys(data),
     color = ordinal()
     .domain([0, 1, 2, 3])
-    .range(["white", "#ffd685", "#76bb88"]);
+    .range(["white", "#FED976", "#A1D99B", "#9E9AC8"]);
 
     widthColumn > 468 ? moreAxis = true : null;
 
