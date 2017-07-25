@@ -4067,11 +4067,10 @@ function queue(concurrency) {
 var calendar = function(){
 
   var margin = { top: 50, right: 10, bottom: 10, left: 95 },
-  widthColumn, width, height, moreAxis = false, monthNames;
-  height = 500;
+  widthColumn, width, height, monthNames;
+  height = 600;
 
   var data;
-
 
   //load data
   queue()
@@ -4099,14 +4098,14 @@ var calendar = function(){
   function heatmap(key,data){
 
     var el = "#" + key;
-    select(el).html("");
+    select(el).remove();
+
+    var container = select("#wrapper").append("div").attr('id', key);
+    var title = container.append("h2").html(key);
 
     var monthNames = keys(entries(data)[0].value);
-    var widthColumn = select("#chart").node().getBoundingClientRect().width,
+    var widthColumn = select("#wrapper").node().getBoundingClientRect().width,
     width = Math.min(600, widthColumn) - margin.left - margin.right,
-
-    // variable to show less labels on x axis
-    less_labels = width < 390,
 
     xScale = band().range([0, width]),
     yScale = band().rangeRound([0, height]),
@@ -4115,9 +4114,6 @@ var calendar = function(){
     color = ordinal()
     .domain([0, 1, 2, 3])
     .range(["white", "#FED976", "#A1D99B", "#9E9AC8"]);
-
-
-    widthColumn > 468 ? moreAxis = true : null;
 
     // Add the horizontal labels
     xScale.domain(monthNames);
@@ -4137,7 +4133,7 @@ var calendar = function(){
     xAxis.scale(xScale);
     yAxis.scale(yScale);
 
-    var svg = select(el)
+    var svg = container.append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -4184,7 +4180,9 @@ var calendar = function(){
     .selectAll("text")
     .style("text-anchor", "end");
 
+
   }
+
 
   ///
   select(window).on('resize', ready);
