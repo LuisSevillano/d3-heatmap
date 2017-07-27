@@ -8,6 +8,6 @@ export default {
   moduleName: "d3",
   plugins: [
     npm({ jsnext: true, main: true }),
-    //uglify()
+    uglify()
   ]
 }

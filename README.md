@@ -1,4 +1,4 @@
-### An easy plugin to build month calendars/two dimensional heatmaps
+### An easy plugin to build month two dimensional heatmaps
 
 #### Features
 - Mobile friendly/ responsive
@@ -7,5 +7,5 @@
 - Clean code
 
 #### How
-`npm install`
+`npm install`   
 `npm start`

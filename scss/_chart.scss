@@ -9,14 +9,6 @@
   min-height: 600px;
   margin: 0 auto;
 }
-h2 {
-  font-size: 2rem;
-  margin-bottom: 0;
-  color: rgb(80,80,80);
-  text-transform: uppercase;
-  letter-spacing: 1rem;
-  text-align: center;
-}
 .axis path,
 .axis line {
   fill: none;
@@ -27,7 +19,7 @@ h2 {
   fill: rgb(69,69,69);
 }
 .axis text {
-  font-size: 1rem;
+  font-size: .8rem;
 }
 rect {
   stroke: white;
@@ -44,6 +36,9 @@ rect {
   height: 13px;
   margin-right: 3px;
   border-radius: 50%;
+}
+span {
+  vertical-align: text-bottom;
 }
 .green {
   background-color: #41AB5D;

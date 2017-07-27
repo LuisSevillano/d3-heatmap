@@ -18,32 +18,22 @@ export default function(){
   .defer(json, "data/data.json")
   .await(ready);
 
-  // function ready(error, json){
-  //   if (error) throw error
-  //
-  //   _data = json;
-  //   resize(_data);
-  // }
-
   function ready(error, json) {
     if (error) throw error
 
     if (!data) {
       data = json;
     }
-    keys(data).forEach(function(key){
-      heatmap(key, data[key]);
-    });
+    heatmap(data);
 
   }
-  function heatmap(key,data){
+  function heatmap(data){
 
-    var el = "#" + key;
-    select(el).remove();
+    select("svg").remove();
 
-    var container = select("#wrapper").append("div").attr('id', key);
-    var title = container.append("h2").html(key)
+    var container = select("#wrapper").append("div");
 
+    // extract month names
     var monthNames = keys(entries(data)[0].value);
     var widthColumn = select("#wrapper").node().getBoundingClientRect().width,
     width = Math.min(600, widthColumn) - margin.left - margin.right,
@@ -51,10 +41,12 @@ export default function(){
     xScale = scaleBand().range([0, width]),
     yScale = scaleBand().rangeRound([0, height]),
 
+    // fruits datasets is about when it is good season to consume a fruit, if it is seasonal, etc.
+    // if you want to build a usual heatmap you'd modify this color scale
     yNames = Object.keys(data),
     color = scaleOrdinal()
     .domain([0, 1, 2, 3])
-    .range(["white", "#FED976", "#A1D99B", "#9E9AC8"]);
+    .range(["#FFFFFF", "#FED976", "#A1D99B", "#9E9AC8"]);
 
     // Add the horizontal labels
     xScale.domain(monthNames);
@@ -64,13 +56,14 @@ export default function(){
 
     var xAxis = axisTop(yScale)
     .tickSize(5)
+    .tickPadding(0)
     .tickSizeOuter(0),
 
     yAxis = axisLeft(xScale)
     .tickSize(5)
     .tickSizeOuter(0);
 
-    // Update the range of the scale with new width/height
+    // Update the range of the scale with width/height
     xAxis.scale(xScale);
     yAxis.scale(yScale);
 
@@ -79,6 +72,7 @@ export default function(){
     .attr("height", height + margin.top + margin.bottom)
     .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
+    // concept comes from https://bost.ocks.org/mike/nest/
     // ~table
     var sq_calendar = svg.append("g").attr('class', 'sq_calendar');
 
@@ -120,14 +114,8 @@ export default function(){
     .call(yAxis)
     .selectAll("text")
     .style("text-anchor", "end");
-
-
   }
 
-
-  ///
   select(window).on('resize', ready);
-
-  //resize();
 
 }
