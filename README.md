@@ -6,6 +6,14 @@
 - Uses [rollup.js](https://github.com/rollup/rollup)
 - Clean code
 
+#### Data structure
+
+```
+{
+  "Avocado": { "Jan":2, "Feb":1, "Mar":0, ...},
+}
+```
+
 #### How
 `npm install`   
 `npm start`
