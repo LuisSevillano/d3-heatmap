@@ -4,14 +4,14 @@
 - Mobile friendly/ responsive
 - Data in `json` format
 - Uses [rollup.js](https://github.com/rollup/rollup)
-- Clean code
+- Clean code   
 
+![thumbnail](https://www.luissevillano.net/img/heatmap-big.jpg)
 #### Data structure
 
-```
-{
-  "Avocado": { "Jan":2, "Feb":1, "Mar":0, ...},
-}
+```json
+"Avocado": { "Jan":2, "Feb":1, "Mar":0, ...},
+
 ```
 
 #### How
