@@ -25,8 +25,8 @@ export default function(){
             data = json;
         }
         heatmap(data);
-
     }
+
     function heatmap(data){
 
         select("svg").remove();
